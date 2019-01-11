@@ -1,0 +1,10 @@
+{
+    "id": "reflecs.components.input",
+    "type": "package",
+    "value": {
+        "author": "Sander Mertens",
+        "description": "Input module for reflecs",
+        "version": "0.0.0",
+        "use": ["reflecs"]
+    }
+}
