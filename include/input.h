@@ -89,17 +89,26 @@ extern "C" {
 #define ECS_KEY_ALT ('A')
 
 typedef struct EcsKeyState {
-    uint32_t t_down;
-    uint32_t t_up;
     bool pressed;
+    bool state;
+    bool current;
 } EcsKeyState;
+
+typedef struct EcsMouseState {
+    EcsKeyState left;
+    EcsKeyState right;
+    EcsVec2 wnd;
+    EcsVec2 rel;
+    EcsVec2 scroll;
+} EcsMouseState;
 
 typedef struct EcsInput {
     EcsKeyState keys[128];
+    EcsMouseState mouse;
 } EcsInput;
 
 typedef struct EcsComponentsInputHandles {
-    EcsHandle Input;
+    EcsEntity Input;
 } EcsComponentsInputHandles;
 
 void EcsComponentsInput(
