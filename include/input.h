@@ -1,5 +1,5 @@
-#ifndef REFLECS_COMPONENTS_INPUT_H
-#define REFLECS_COMPONENTS_INPUT_H
+#ifndef FLECS_COMPONENTS_INPUT_H
+#define FLECS_COMPONENTS_INPUT_H
 
 /* This generated file contains includes for project dependencies */
 #include "bake_config.h"
@@ -108,7 +108,7 @@ typedef struct EcsInput {
 } EcsInput;
 
 typedef struct EcsComponentsInputHandles {
-    EcsEntity Input;
+    ECS_DECLARE_COMPONENT(EcsInput);
 } EcsComponentsInputHandles;
 
 void EcsComponentsInput(
@@ -116,8 +116,8 @@ void EcsComponentsInput(
     int flags,
     void *handles_out);
 
-#define EcsComponentsInput_DeclareHandles(handles)\
-    EcsDeclareHandle(handles, Input);\
+#define EcsComponentsInput_ImportHandles(handles)\
+    ECS_IMPORT_HANDLE(handles, EcsInput);\
 
 #ifdef __cplusplus
 }

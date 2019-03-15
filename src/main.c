@@ -3,10 +3,10 @@
 
 static
 void InitInput(EcsRows *rows) {
-    void *row;
-    for (row = rows->first; row < rows->last; row = ecs_next(rows, row)) {
-        EcsInput *input = ecs_data(rows, row, 0);
-        memset(input, 0, sizeof(EcsInput));
+    EcsInput *input = ecs_column(rows, EcsInput, 0);
+    int i;
+    for (i = rows->begin; i < rows->end; i ++) {
+        memset(&input[i], 0, sizeof(EcsInput));
     }
 }
 
@@ -21,5 +21,5 @@ void EcsComponentsInput(
 
     ECS_SYSTEM(world, InitInput, EcsOnAdd, EcsInput);
 
-    handles->Input = EcsInput_h;
+    ECS_SET_COMPONENT(handles, EcsInput);
 }

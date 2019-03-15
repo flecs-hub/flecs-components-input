@@ -1,10 +1,10 @@
 {
-    "id": "reflecs.components.input",
+    "id": "flecs.components.input",
     "type": "package",
     "value": {
         "author": "Sander Mertens",
-        "description": "Input module for reflecs",
+        "description": "Input module for flecs",
         "version": "0.0.0",
-        "use": ["reflecs", "reflecs.components.transform"]
+        "use": ["flecs", "flecs.components.transform"]
     }
 }
