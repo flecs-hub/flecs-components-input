@@ -117,7 +117,7 @@ void EcsComponentsInput(
     void *handles_out);
 
 #define EcsComponentsInput_ImportHandles(handles)\
-    ECS_IMPORT_HANDLE(handles, EcsInput);\
+    ECS_IMPORT_COMPONENT(handles, EcsInput);\
 
 #ifdef __cplusplus
 }
