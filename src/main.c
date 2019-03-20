@@ -5,7 +5,7 @@ static
 void InitInput(EcsRows *rows) {
     EcsInput *input = ecs_column(rows, EcsInput, 1);
     int i;
-    for (i = rows->begin; i < rows->end; i ++) {
+    for (i = 0; i < rows->count; i ++) {
         memset(&input[i], 0, sizeof(EcsInput));
     }
 }
