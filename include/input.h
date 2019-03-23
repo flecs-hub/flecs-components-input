@@ -99,6 +99,7 @@ typedef struct EcsMouseState {
     EcsKeyState right;
     EcsVec2 wnd;
     EcsVec2 rel;
+    EcsVec2 view;
     EcsVec2 scroll;
 } EcsMouseState;
 
