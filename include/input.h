@@ -108,16 +108,15 @@ typedef struct EcsInput {
     EcsMouseState mouse;
 } EcsInput;
 
-typedef struct EcsComponentsInputHandles {
+typedef struct FlecsComponentsInput {
     ECS_DECLARE_COMPONENT(EcsInput);
-} EcsComponentsInputHandles;
+} FlecsComponentsInput;
 
-void EcsComponentsInput(
+void FlecsComponentsInputImport(
     ecs_world_t *world,
-    int flags,
-    void *handles_out);
+    int flags);
 
-#define EcsComponentsInput_ImportHandles(handles)\
+#define FlecsComponentsInputImportHandles(handles)\
     ECS_IMPORT_COMPONENT(handles, EcsInput);\
 
 #ifdef __cplusplus

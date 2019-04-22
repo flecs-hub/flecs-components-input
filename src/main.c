@@ -10,12 +10,11 @@ void InitInput(ecs_rows_t *rows) {
     }
 }
 
-void EcsComponentsInput(
+void FlecsComponentsInputImport(
     ecs_world_t *world,
-    int flags,
-    void *handles_out)
+    int flags)
 {
-    EcsComponentsInputHandles *handles = handles_out;
+    ECS_MODULE(world, FlecsComponentsInput);
 
     ECS_COMPONENT(world, EcsInput);
 
