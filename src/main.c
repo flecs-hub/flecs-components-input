@@ -1,4 +1,4 @@
-#include <include/input.h>
+#include <flecs_components_input.h>
 #include <string.h>
 
 static

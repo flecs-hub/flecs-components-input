@@ -2,7 +2,7 @@
 #define FLECS_COMPONENTS_INPUT_H
 
 /* This generated file contains includes for project dependencies */
-#include "bake_config.h"
+#include <flecs-components-input/bake_config.h>
 
 #ifdef __cplusplus
 extern "C" {
