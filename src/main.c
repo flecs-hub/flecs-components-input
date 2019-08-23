@@ -20,5 +20,5 @@ void FlecsComponentsInputImport(
 
     ECS_SYSTEM(world, InitInput, EcsOnAdd, EcsInput);
 
-    ECS_SET_COMPONENT(handles, EcsInput);
+    ECS_SET_COMPONENT(EcsInput);
 }
