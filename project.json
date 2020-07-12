@@ -4,7 +4,10 @@
     "value": {
         "author": "Sander Mertens",
         "description": "Input module for flecs",
-        "version": "0.0.0",
-        "use": ["flecs", "flecs.components.transform"]
+        "use": [
+            "flecs", 
+            "flecs.meta",
+            "flecs.components.graphics"
+        ]
     }
 }

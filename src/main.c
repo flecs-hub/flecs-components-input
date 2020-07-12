@@ -1,24 +1,23 @@
 #include <flecs_components_input.h>
 #include <string.h>
 
-static
-void InitInput(ecs_rows_t *rows) {
-    EcsInput *input = ecs_column(rows, EcsInput, 1);
-    int i;
-    for (i = 0; i < rows->count; i ++) {
-        memset(&input[i], 0, sizeof(EcsInput));
-    }
-}
-
 void FlecsComponentsInputImport(
-    ecs_world_t *world,
-    int flags)
+    ecs_world_t *world)
 {
     ECS_MODULE(world, FlecsComponentsInput);
+    
+    ECS_IMPORT(world, FlecsMeta);
+    ECS_IMPORT(world, FlecsComponentsGraphics);
 
-    ECS_COMPONENT(world, EcsInput);
+    ecs_set_name_prefix(world, "ecs");
 
-    ECS_SYSTEM(world, InitInput, EcsOnAdd, EcsInput);
+    ECS_META(world, ecs_key_state_t);
+    ECS_META(world, ecs_mouse_coord_t);
+    ECS_META(world, ecs_mouse_state_t);
 
-    ECS_SET_COMPONENT(EcsInput);
+    ecs_set_name_prefix(world, "Ecs");
+
+    ECS_META(world, EcsInput);
+
+    ECS_EXPORT_COMPONENT(EcsInput);
 }

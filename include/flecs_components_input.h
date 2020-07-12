@@ -88,25 +88,30 @@ extern "C" {
 #define ECS_KEY_SHIFT ('S')
 #define ECS_KEY_ALT ('A')
 
-typedef struct EcsKeyState {
+ECS_STRUCT(ecs_key_state_t, {
     bool pressed;
     bool state;
     bool current;
-} EcsKeyState;
+});
 
-typedef struct EcsMouseState {
-    EcsKeyState left;
-    EcsKeyState right;
-    EcsVec2 wnd;
-    EcsVec2 rel;
-    EcsVec2 view;
-    EcsVec2 scroll;
-} EcsMouseState;
+ECS_STRUCT(ecs_mouse_coord_t, {
+    float x;
+    float y;
+});
 
-typedef struct EcsInput {
-    EcsKeyState keys[128];
-    EcsMouseState mouse;
-} EcsInput;
+ECS_STRUCT( ecs_mouse_state_t, {
+    ecs_key_state_t left;
+    ecs_key_state_t right;
+    ecs_mouse_coord_t wnd;
+    ecs_mouse_coord_t rel;
+    ecs_mouse_coord_t view;
+    ecs_mouse_coord_t scroll;
+});
+
+ECS_STRUCT(EcsInput, {
+    ecs_key_state_t keys[128];
+    ecs_mouse_state_t mouse;
+});
 
 typedef struct FlecsComponentsInput {
     ECS_DECLARE_COMPONENT(EcsInput);
@@ -114,8 +119,7 @@ typedef struct FlecsComponentsInput {
 
 FLECS_COMPONENTS_INPUT_EXPORT
 void FlecsComponentsInputImport(
-    ecs_world_t *world,
-    int flags);
+    ecs_world_t *world);
 
 #define FlecsComponentsInputImportHandles(handles)\
     ECS_IMPORT_COMPONENT(handles, EcsInput);\
