@@ -4,6 +4,31 @@
 /* This generated file contains includes for project dependencies */
 #include <flecs-components-input/bake_config.h>
 
+ECS_STRUCT(ecs_key_state_t, {
+    bool pressed;
+    bool state;
+    bool current;
+});
+
+ECS_STRUCT(ecs_mouse_coord_t, {
+    float x;
+    float y;
+});
+
+ECS_STRUCT( ecs_mouse_state_t, {
+    ecs_key_state_t left;
+    ecs_key_state_t right;
+    ecs_mouse_coord_t wnd;
+    ecs_mouse_coord_t rel;
+    ecs_mouse_coord_t view;
+    ecs_mouse_coord_t scroll;
+});
+
+ECS_STRUCT(EcsInput, {
+    ecs_key_state_t keys[128];
+    ecs_mouse_state_t mouse;
+});
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -87,31 +112,6 @@ extern "C" {
 #define ECS_KEY_CTRL ((int)'C')
 #define ECS_KEY_SHIFT ((int)'S')
 #define ECS_KEY_ALT ((int)'A')
-
-ECS_STRUCT(ecs_key_state_t, {
-    bool pressed;
-    bool state;
-    bool current;
-});
-
-ECS_STRUCT(ecs_mouse_coord_t, {
-    float x;
-    float y;
-});
-
-ECS_STRUCT( ecs_mouse_state_t, {
-    ecs_key_state_t left;
-    ecs_key_state_t right;
-    ecs_mouse_coord_t wnd;
-    ecs_mouse_coord_t rel;
-    ecs_mouse_coord_t view;
-    ecs_mouse_coord_t scroll;
-});
-
-ECS_STRUCT(EcsInput, {
-    ecs_key_state_t keys[128];
-    ecs_mouse_state_t mouse;
-});
 
 typedef struct FlecsComponentsInput {
     ECS_DECLARE_COMPONENT(EcsInput);
