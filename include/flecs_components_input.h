@@ -4,6 +4,8 @@
 /* This generated file contains includes for project dependencies */
 #include <flecs-components-input/bake_config.h>
 
+#ifndef FLECS_LEGACY
+
 ECS_STRUCT(ecs_key_state_t, {
     bool pressed;
     bool state;
@@ -28,6 +30,8 @@ ECS_STRUCT(EcsInput, {
     ecs_key_state_t keys[128];
     ecs_mouse_state_t mouse;
 });
+
+#endif
 
 #ifdef __cplusplus
 extern "C" {
