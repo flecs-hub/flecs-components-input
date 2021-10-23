@@ -6,7 +6,6 @@
         "description": "Input module for flecs",
         "use": [
             "flecs", 
-            "flecs.meta",
             "flecs.components.graphics"
         ]
     }

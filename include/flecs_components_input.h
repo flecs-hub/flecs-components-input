@@ -4,6 +4,12 @@
 /* This generated file contains includes for project dependencies */
 #include <flecs-components-input/bake_config.h>
 
+// Reflection system boilerplate
+#undef ECS_META_IMPL
+#ifndef flecs_components_input_EXPORTS
+#define ECS_META_IMPL EXTERN // Ensure meta symbols are only defined once
+#endif
+
 #ifndef FLECS_LEGACY
 
 ECS_STRUCT(ecs_key_state_t, {
@@ -117,16 +123,9 @@ extern "C" {
 #define ECS_KEY_SHIFT ((int)'S')
 #define ECS_KEY_ALT ((int)'A')
 
-typedef struct FlecsComponentsInput {
-    ECS_DECLARE_COMPONENT(EcsInput);
-} FlecsComponentsInput;
-
 FLECS_COMPONENTS_INPUT_API
 void FlecsComponentsInputImport(
     ecs_world_t *world);
-
-#define FlecsComponentsInputImportHandles(handles)\
-    ECS_IMPORT_COMPONENT(handles, EcsInput);\
 
 #ifdef __cplusplus
 }
@@ -143,7 +142,7 @@ public:
     using Input = EcsInput;
 
     input(flecs::world& ecs) {
-        FlecsComponentsInputImport(ecs.c_ptr());
+        FlecsComponentsInputImport(ecs);
 
         ecs.module<flecs::components::input>();
 
