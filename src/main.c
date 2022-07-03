@@ -1,3 +1,5 @@
+#define FLECS_COMPONENTS_INPUT_IMPL
+
 #include <flecs_components_input.h>
 #include <string.h>
 
