@@ -149,16 +149,17 @@ void FlecsComponentsInputImport(
 namespace flecs {
 namespace components {
 
-class input : FlecsComponentsInput {
+class input {
 public:
     using Input = EcsInput;
 
     input(flecs::world& ecs) {
+        // Load module contents
         FlecsComponentsInputImport(ecs);
 
+        // Bind C++ types with module contents
         ecs.module<flecs::components::input>();
-
-        ecs.pod_component<Input>("flecs::components::input::Input");
+        ecs.component<Input>();
     }
 };
 
