@@ -19,7 +19,6 @@
 
 /* Headers of public dependencies */
 #include <flecs.h>
-#include <flecs_components_graphics.h>
 
 /* Convenience macro for exporting symbols */
 #ifndef flecs_components_input_STATIC

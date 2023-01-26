@@ -7,7 +7,6 @@ void FlecsComponentsInputImport(
     ecs_world_t *world)
 {
     ECS_MODULE(world, FlecsComponentsInput);
-    ECS_IMPORT(world, FlecsComponentsGraphics);
 
     ecs_set_name_prefix(world, "ecs");
 

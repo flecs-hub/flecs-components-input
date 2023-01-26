@@ -5,8 +5,7 @@
         "author": "Sander Mertens",
         "description": "Input module for flecs",
         "use": [
-            "flecs", 
-            "flecs.components.graphics"
+            "flecs"
         ]
     }
 }
